@@ -32,6 +32,13 @@ open class PGSideMenu: UIViewController {
     /** Right menu controller */
     public var rightMenuController: UIViewController?
     
+    /** It returns true if any of Left or Right menu is open */
+    public var isMenuOpen: Bool {
+        get {
+            return self.animationDelegate.isLeftMenuOpen || self.animationDelegate.isRightMenuOpen
+        }
+    }
+    
     /** Sets the animation type of the menu. Closes any currently opened menu. */
     public var animationType: PGSideMenuAnimationType = .slideIn {
         didSet {
